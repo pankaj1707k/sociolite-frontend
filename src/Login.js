@@ -10,7 +10,22 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
+import { yellow } from '@mui/material/colors';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: yellow[500],
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#11cb5f',
+    },
+  },
+});
+
 
 function Login() {
     // const myStyle={
@@ -37,15 +52,17 @@ function Login() {
         <CssBaseline />
         <Grid
           item
-          xs={false}
+          xs={5}
           sm={4}
           md={7}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square style={{backgroundColor:'transparent', boxShadow:'none !important'}}>
+        >
+        <h1 style={{fontSize:'5rem',color:'yellow',marginLeft:'1em',marginTop:'7em'}}>Sociolite</h1>
+        </Grid>
+        <Grid item xs={12} sm={8} md={5} elevation={6} square style={{backgroundColor:'transparent', boxShadow:'none !important'}}>
           <Box
             sx={{
               my: 8,
-              mx: 4,
+              mx: 12,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -54,9 +71,11 @@ function Login() {
             {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
               <LockOutlinedIcon />
             </Avatar> */}
-            <Typography component="h1" variant="h5" style={{color:'white'}}>
+            <ThemeProvider theme={theme}>
+            <Typography component="h1" variant="h5" style={{color:'white',marginTop:'2em'}}>
               Sign in
             </Typography>
+            
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
@@ -82,14 +101,17 @@ function Login() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
+              
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                color="primary"
               >
                 Sign In
               </Button>
+              
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
@@ -103,6 +125,7 @@ function Login() {
                 </Grid>
               </Grid>
             </Box>
+            </ThemeProvider>
           </Box>
         </Grid>
       </Grid>
