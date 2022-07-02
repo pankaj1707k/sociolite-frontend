@@ -1,6 +1,6 @@
 import React from 'react'
-import "./css/App.css"
-import bg from "./img/bg.svg"
+import "../css/App.css"
+import bg from "../img/bg.svg"
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -25,7 +25,6 @@ const theme = createTheme({
     },
   },
 });
-
 
 function Login() {
     // const myStyle={
@@ -88,7 +87,7 @@ function Login() {
                 autoFocus
               />
               <TextField
-                margin="normal"
+                margin="normal" 
                 required
                 fullWidth
                 name="password"
