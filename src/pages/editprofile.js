@@ -78,8 +78,9 @@ function Profile() {
             
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <div className="App">
+            <h2>Add Image:</h2>
             <input type="file" onChange={handleChange}/>
-            <img alt="Upload here" style ={{height:'150px', width:'150px', borderRadius:'50%', borderColor:'transparent'}} src={file} />
+            <img alt="Avatar" style ={{height:'150px', width:'150px', borderRadius:'50%', borderColor:'transparent'}} src={file} />
             </div>
 
             <TextField
